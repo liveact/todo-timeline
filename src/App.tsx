@@ -593,7 +593,7 @@ export default function App() {
                 onScroll={() => syncScroll('left')}
                 style={{ scrollbarWidth: 'none' }}
               >
-                <ContextMenu onOpenChange={(open) => { if (!open) setContextTask(null) }}>
+                <ContextMenu onOpenChange={(open) => { if (!open) requestAnimationFrame(() => setContextTask(null)) }}>
                   <ContextMenuTrigger>
                     <TaskList
                       tasks={visibleTasks}
@@ -622,7 +622,7 @@ export default function App() {
                 className="flex-1 overflow-auto"
                 onScroll={handleTimelineScroll}
               >
-                <ContextMenu onOpenChange={(open) => { if (!open) setContextTask(null) }}>
+                <ContextMenu onOpenChange={(open) => { if (!open) requestAnimationFrame(() => setContextTask(null)) }}>
                   <ContextMenuTrigger className="min-h-full flex flex-col" onContextMenu={handleTimelineContextMenu}>
                     <div className="relative flex flex-col min-h-full flex-1" style={{ width: days.length * dayWidth }}>
                       <TimelineGridLines days={days} dayWidth={dayWidth} />
