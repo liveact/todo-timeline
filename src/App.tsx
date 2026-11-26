@@ -31,6 +31,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { Header } from '@/components/layout/Header'
 import { PrivacyDialog } from '@/components/layout/PrivacyDialog'
+import { FloatingLinks } from '@/components/floating/FloatingLinks'
 import { DateHeader } from '@/components/timeline/DateHeader'
 import { TimelineGrid, TimelineGridLines } from '@/components/timeline/TimelineGrid'
 import { TaskList } from '@/components/task/TaskList'
@@ -751,6 +752,8 @@ export default function App() {
         <footer className="shrink-0 -mt-1.5 pb-1.5 text-center">
           <PrivacyDialog />
         </footer>
+
+        <FloatingLinks />
       </div>
     </TooltipProvider>
   )
